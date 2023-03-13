@@ -5,13 +5,45 @@ import { AuthContext } from '../../../Context/AuthProvider';
 
 const SignUp = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
-    const { createUser } = useContext(AuthContext);
+    const imgHostKey = process.env.REACT_APP_imgBB_key;
+    console.log(imgHostKey)
+    const { createUser, googleSignIn } = useContext(AuthContext);
 
-    const handleSignIn = data => {
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+            })
+            .catch(err => console.log(err));
+    };
+
+    const handleSignIn = (data, e) => {
         console.log(data);
+        e.target.reset();
+
+        // upload img in imgBB
+        const image = data.image[0];
+        const formData = new FormData();
+        formData.append('image', image);
+        const url = `https://api.imgbb.com/1/upload?key=${imgHostKey}`;
+        fetch(url, {
+            method: 'POST',
+            body: formData
+        })
+            .then(res => res.json())
+            .then(imgData => {
+                console.log(imgData.data.url);
+                // if (imgData.success) {
+
+                // }
+            })
+
         createUser(data.email, data.password)
             .then(res => res.json())
             .then(data => console.log(data))
+
+
     }
 
     return (
@@ -61,6 +93,10 @@ const SignUp = () => {
                         <p className='' style={{ color: "#675444" }}>Already have an account? <Link to='/login' className='text-yellow-500 font-bold'>Please Login</Link></p>
                     </form>
                 </div>
+            </div>
+            <div className="divider">OR</div>
+            <div className='card-actions justify-center'>
+                <button onClick={handleGoogleSignIn} className='btn btn-outline w-full max-w-xs text-error'>CONTINUE WITH GOOGLE</button>
             </div>
         </div>
     );
