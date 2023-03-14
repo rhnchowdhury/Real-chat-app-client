@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import useToken from '../../../../hooks/useToken';
 import { AuthContext } from '../../../Context/AuthProvider';
 
 const SignUp = () => {
@@ -8,7 +9,14 @@ const SignUp = () => {
     const imgHostKey = process.env.REACT_APP_imgBB_key;
     console.log(imgHostKey)
     const { createUser, updateUser } = useContext(AuthContext);
+    const [createUserEmail, setCreateUserEmail] = useState('');
     const [signError, setSignError] = useState('');
+    const [token] = useToken(createUserEmail);
+    const navigate = useNavigate();
+
+    if (token) {
+        navigate('/');
+    }
 
     const handleSignIn = (data, e) => {
         console.log(data.image[0]);
@@ -63,7 +71,10 @@ const SignUp = () => {
             body: JSON.stringify(users)
         })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => {
+                setCreateUserEmail(data.email);
+                // console.log(data)
+            })
 
 
     }
