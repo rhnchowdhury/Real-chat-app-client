@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Context/AuthProvider';
@@ -7,23 +7,17 @@ const SignUp = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const imgHostKey = process.env.REACT_APP_imgBB_key;
     console.log(imgHostKey)
-    const { createUser, googleSignIn } = useContext(AuthContext);
-
-    const handleGoogleSignIn = () => {
-        googleSignIn()
-            .then(result => {
-                const user = result.user;
-                console.log(user)
-            })
-            .catch(err => console.log(err));
-    };
+    const { createUser, updateUser } = useContext(AuthContext);
+    const [signError, setSignError] = useState('');
 
     const handleSignIn = (data, e) => {
-        console.log(data);
+        console.log(data.image[0]);
         e.target.reset();
+        // setSignError('');
 
         // upload img in imgBB
         const image = data.image[0];
+
         const formData = new FormData();
         formData.append('image', image);
         const url = `https://api.imgbb.com/1/upload?key=${imgHostKey}`;
@@ -33,13 +27,41 @@ const SignUp = () => {
         })
             .then(res => res.json())
             .then(imgData => {
-                console.log(imgData.data.url);
+                console.log(imgData);
                 // if (imgData.success) {
 
                 // }
             })
 
         createUser(data.email, data.password)
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+                const userInfo = {
+                    displayName: data.name,
+                    // photoURL: data.data.display_url
+                    // image: data.data.url
+                }
+                updateUser(userInfo)
+                    .then(() => { })
+                    .catch(error => {
+                        console.log(error)
+                        setSignError(error.message);
+                    })
+            });
+
+        const users = {
+            name: data.name,
+            email: data.email
+        }
+
+        fetch('http://localhost:5000/users', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(users)
+        })
             .then(res => res.json())
             .then(data => console.log(data))
 
@@ -64,12 +86,6 @@ const SignUp = () => {
                             <input type='file' placeholder='' {...register("image")}
                                 className="input input-bordered w-full max-w-xs" />
                         </div>
-                        <div className='flex justify-start'>
-                            <select name="user" id="" className='my-2 text-xl font-semibold'>
-                                <option value="seller">Seller</option>
-                                <option value="buyer">Buyer</option>
-                            </select>
-                        </div>
                         <div>
                             <label className="label"><span className="label-text font-bold" style={{ color: "#675444" }}>Email</span></label>
                             <input type='text' {...register("email", {
@@ -89,15 +105,15 @@ const SignUp = () => {
                             {errors.password && <p className='text-error'>{errors.password?.message}</p>}
                         </div>
                         <input className='btn  mt-4 w-full max-w-xs' style={{ background: "#675444" }} value='Sign Up' type="submit" />
-                        {/* {signError && <p className='text-error'>{signError}</p>} */}
+                        {signError && <p className='text-error'>{signError}</p>}
                         <p className='' style={{ color: "#675444" }}>Already have an account? <Link to='/login' className='text-yellow-500 font-bold'>Please Login</Link></p>
                     </form>
                 </div>
             </div>
-            <div className="divider">OR</div>
+            {/* <div className="divider">OR</div>
             <div className='card-actions justify-center'>
                 <button onClick={handleGoogleSignIn} className='btn btn-outline w-full max-w-xs text-error'>CONTINUE WITH GOOGLE</button>
-            </div>
+            </div> */}
         </div>
     );
 };

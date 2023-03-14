@@ -1,16 +1,13 @@
 import React from 'react';
-import Hero from '../Hero';
-import SideBar from '../SideBar/SideBar';
+import Banner from '../Banner/Banner';
 
 const Home = () => {
     return (
-        <div className='flex flex-col lg:flex-row'>
-            <div className='w-56'>
-                <SideBar></SideBar>
-            </div>
-            <div className='w-full'>
-                <Hero></Hero>
-            </div>
+        <div>
+            <Banner></Banner>
+            <audio className='mt-20'>
+                <source src="sample.mp3" type="audio/mpeg"></source>
+            </audio>
         </div>
     );
 };
