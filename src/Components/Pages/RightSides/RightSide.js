@@ -1,9 +1,16 @@
 import React from 'react';
+import InfoSec from './InfoSec/InfoSec';
+import MessageSec from './MessageSec/MessageSec';
 
 const RightSide = () => {
     return (
-        <div>
-            <h1>this is right</h1>
+        <div className='flex'>
+            <div className='w-full'>
+                <MessageSec></MessageSec>
+            </div>
+            <div className='w-56'>
+                <InfoSec></InfoSec>
+            </div>
         </div>
     );
 };
