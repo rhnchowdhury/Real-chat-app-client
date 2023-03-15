@@ -8,17 +8,31 @@ const MessageSec = () => {
     return (
         <section>
             <div className='flex justify-between'>
-                <div className="avatar space-x-4">
-                    <div className="w-8 rounded-full">
-                        <img src={img1} alt='' />
+                <div className='flex space-x-4'>
+                    <div className="avatar online">
+                        <div className="w-8 rounded-full">
+                            <img src={img1} alt='' />
+                        </div>
                     </div>
                     <p className='text-red'>Raihan</p>
                 </div>
                 <div className='flex space-x-3'>
-                    <FaPhoneAlt></FaPhoneAlt>
+                    <span className=''><FaPhoneAlt></FaPhoneAlt></span>
                     <MdVideocam></MdVideocam>
                     <BsFillDashCircleFill></BsFillDashCircleFill>
                 </div>
+            </div>
+            <div>
+                <p className='text-end'>How are you?</p>
+                <div className="avatar space-x-4">
+                    <div className="w-8 rounded-full">
+                        <img src={img1} alt='' />
+
+                    </div>
+                    <p className='text-red'>I'm fine</p>
+
+                </div>
+                <p>2 june, 2021</p>
             </div>
         </section>
     );
