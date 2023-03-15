@@ -1,0 +1,11 @@
+#emoji {
+    display: none;
+}
+
+.emoji-sec {
+    display: none;
+}
+
+#emoji:checked~.emoji-sec {
+    display: block;
+}
