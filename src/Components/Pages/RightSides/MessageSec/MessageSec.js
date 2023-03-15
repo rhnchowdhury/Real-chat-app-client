@@ -27,12 +27,27 @@ const MessageSec = () => {
                 <div className="avatar space-x-4">
                     <div className="w-8 rounded-full">
                         <img src={img1} alt='' />
-
                     </div>
                     <p className='text-red'>I'm fine</p>
-
                 </div>
-                <p>2 june, 2021</p>
+            </div>
+            <div>
+                <p className='text-end'>How are you?</p>
+                <div className="avatar space-x-4">
+                    <div className="w-8 rounded-full">
+                        <img src={img1} alt='' />
+                    </div>
+                    <p className='text-red'>I'm fine</p>
+                </div>
+            </div>
+            <div>
+                <p className='text-end'>How are you?</p>
+                <div className="avatar space-x-4">
+                    <div className="w-8 rounded-full">
+                        <img src={img1} alt='' />
+                    </div>
+                    <p className='text-red'>I'm fine</p>
+                </div>
             </div>
         </section>
     );
