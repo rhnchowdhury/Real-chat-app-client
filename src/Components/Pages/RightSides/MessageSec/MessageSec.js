@@ -3,6 +3,7 @@ import { FaPhoneAlt } from 'react-icons/fa';
 import { MdVideocam } from "react-icons/md";
 import { BsFillDashCircleFill } from "react-icons/bs";
 import img1 from '../../../assets/msc.jpg'
+import MessageSend from './MessageSend';
 
 const MessageSec = () => {
     return (
@@ -49,6 +50,7 @@ const MessageSec = () => {
                     <p className='text-red'>I'm fine</p>
                 </div>
             </div>
+            <MessageSend></MessageSend>
         </section>
     );
 };
