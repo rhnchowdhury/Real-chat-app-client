@@ -19,7 +19,7 @@ const MessageSend = () => {
                 </div>
                 <div>
                     <input type="file" id='pic' className='form-control hidden' />
-                    <label htmlFor="pic" className='relative' style={{ hover: "add" }}><TfiGallery></TfiGallery></label>
+                    <label htmlFor="pic" className='relative gallery'><TfiGallery></TfiGallery></label>
                 </div>
                 <div>
                     <BiCommentEdit></BiCommentEdit>

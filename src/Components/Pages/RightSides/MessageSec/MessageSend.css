@@ -3,6 +3,7 @@
 }
 
 .emoji-sec {
+    position: absolute;
     display: none;
 }
 
