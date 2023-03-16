@@ -1,6 +1,6 @@
 import React from 'react';
 import { MdKeyboardArrowDown } from "react-icons/md";
-import img1 from '../../../assets/banner.jpg';
+import img1 from '../../../assets/msc.jpg';
 import './InfoSec.css';
 
 const InfoSec = () => {
@@ -14,7 +14,7 @@ const InfoSec = () => {
                     </div>
                 </div>
                 <p className='text-center' style={{ color: 'rgb(27,238,27)' }}>Active</p>
-                <h6 className='text-center'>Raihan</h6>
+                <h6 className='text-center'>Rhihan</h6>
             </div>
             <div className='space-y-3'>
                 <div className='flex justify-between'>
