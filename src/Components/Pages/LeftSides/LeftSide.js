@@ -7,7 +7,7 @@ import img2 from '../../../Components/assets/msc.jpg';
 
 const LeftSide = () => {
     return (
-        <section>
+        <section className='m-2'>
             <div className='flex justify-between'>
                 <div className="avatar space-x-4">
                     <div className="w-8 rounded-full">

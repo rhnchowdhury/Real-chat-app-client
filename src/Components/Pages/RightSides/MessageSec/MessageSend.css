@@ -10,3 +10,15 @@
 #emoji:checked~.emoji-sec {
     display: block;
 }
+
+#dot {
+    display: none;
+}
+
+.dot {
+    display: block;
+}
+
+#dot:checked~.dot {
+    display: none;
+}

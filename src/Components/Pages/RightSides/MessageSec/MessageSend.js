@@ -12,14 +12,14 @@ const MessageSend = () => {
     ]
     return (
         <section>
-            <div className='flex space-x-2'>
+            <div className='flex justify-evenly'>
                 <div>
                     <input type="checkbox" id='emoji' />
                     <BsPlusCircle></BsPlusCircle>
                 </div>
                 <div>
                     <input type="file" id='pic' className='form-control hidden' />
-                    <label htmlFor="pic" className='relative gallery'><TfiGallery></TfiGallery></label>
+                    <label htmlFor="pic" className='cursor-pointer'><TfiGallery></TfiGallery></label>
                 </div>
                 <div>
                     <BiCommentEdit></BiCommentEdit>

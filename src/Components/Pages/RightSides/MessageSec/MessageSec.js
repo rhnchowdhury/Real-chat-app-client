@@ -4,10 +4,12 @@ import { MdVideocam } from "react-icons/md";
 import { BsFillDashCircleFill } from "react-icons/bs";
 import img1 from '../../../assets/msc.jpg'
 import MessageSend from './MessageSend';
+import '../MessageSec/MessageSend.css'
 
 const MessageSec = () => {
     return (
-        <section>
+        <section className='m-3'>
+            <input type="checkbox" id='dot' />
             <div className='flex justify-between'>
                 <div className='flex space-x-4'>
                     <div className="avatar online">
@@ -20,7 +22,7 @@ const MessageSec = () => {
                 <div className='flex space-x-3'>
                     <span className=''><FaPhoneAlt></FaPhoneAlt></span>
                     <MdVideocam></MdVideocam>
-                    <BsFillDashCircleFill></BsFillDashCircleFill>
+                    <label htmlFor="dot" className='cursor-pointer'><BsFillDashCircleFill></BsFillDashCircleFill></label>
                 </div>
             </div>
             <div>

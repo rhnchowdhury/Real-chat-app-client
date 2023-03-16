@@ -16,7 +16,7 @@ const InfoSec = () => {
                 <p className='text-center' style={{ color: 'rgb(27,238,27)' }}>Active</p>
                 <h6 className='text-center'>Raihan</h6>
             </div>
-            <div>
+            <div className='space-y-3'>
                 <div className='flex justify-between'>
                     <h6>Customize Chat</h6>
                     <MdKeyboardArrowDown></MdKeyboardArrowDown>
