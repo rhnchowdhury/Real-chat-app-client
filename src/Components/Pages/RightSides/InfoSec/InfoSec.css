@@ -1,0 +1,7 @@
+#gallery {
+    display: none;
+}
+
+#gallery:checked~.gallery {
+    display: block;
+}

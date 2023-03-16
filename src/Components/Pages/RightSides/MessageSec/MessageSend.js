@@ -29,7 +29,7 @@ const MessageSend = () => {
                 </div>
                 <div className='flex'>
                     <input type="text" placeholder='Aa' className='form-control rounded-lg border-2' />
-                    <label htmlFor="emoji">🙂</label>
+                    <label htmlFor="emoji" className='cursor-pointer'>🙂</label>
                 </div>
                 <div>
                     ❤

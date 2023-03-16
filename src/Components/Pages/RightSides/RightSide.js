@@ -8,7 +8,7 @@ const RightSide = () => {
             <div className='w-full'>
                 <MessageSec></MessageSec>
             </div>
-            <div className='w-56'>
+            <div className='w-80'>
                 <InfoSec></InfoSec>
             </div>
         </div>
