@@ -11,7 +11,7 @@ const LeftSide = () => {
     console.log(chatFriend);
 
     useEffect(() => {
-        fetch('http://localhost:5000/users')
+        fetch('https://real-chat-server.vercel.app/users')
             .then(res => res.json())
             .then(data => {
                 setUser(data)
@@ -65,7 +65,7 @@ const LeftSide = () => {
             </div>
             <div className='grid gap-3'>
                 {user && user.length > 0 ?
-                    user.map(us => <div key={us._id} chatfriend={chatFriend} className="avatar space-x-4 hover:bg-slate-500">
+                    user.map(us => <div key={us._id} chatFriend={chatFriend} className="avatar space-x-4 hover:bg-slate-500">
                         <div className="w-8 rounded-full">
                             <img src={img2} alt='' />
                         </div>

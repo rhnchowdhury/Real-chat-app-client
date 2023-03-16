@@ -6,8 +6,8 @@ import img1 from '../../../assets/msc.jpg'
 import MessageSend from './MessageSend';
 import '../MessageSec/MessageSend.css'
 
-const MessageSec = ({ props }) => {
-    const name = props;
+const MessageSec = (props) => {
+    const chatFriend = props;
 
     return (
         <section className='m-3'>
@@ -19,7 +19,7 @@ const MessageSec = ({ props }) => {
                             <img src={img1} alt='' />
                         </div>
                     </div>
-                    <p className='text-red'>{name}</p>
+                    <p className='text-red'>{chatFriend.name}</p>
                 </div>
                 <div className='flex space-x-3'>
                     <span className=''><FaPhoneAlt></FaPhoneAlt></span>
@@ -54,7 +54,7 @@ const MessageSec = ({ props }) => {
                     <p className='text-red'>I'm fine</p>
                 </div>
             </div>
-            <MessageSend></MessageSend>
+            <MessageSend chatFriend={chatFriend}></MessageSend>
         </section>
     );
 };
