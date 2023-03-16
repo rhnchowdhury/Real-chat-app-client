@@ -6,7 +6,9 @@ import img1 from '../../../assets/msc.jpg'
 import MessageSend from './MessageSend';
 import '../MessageSec/MessageSend.css'
 
-const MessageSec = () => {
+const MessageSec = ({ props }) => {
+    const name = props;
+
     return (
         <section className='m-3'>
             <input type="checkbox" id='dot' />
@@ -17,7 +19,7 @@ const MessageSec = () => {
                             <img src={img1} alt='' />
                         </div>
                     </div>
-                    <p className='text-red'>Raihan</p>
+                    <p className='text-red'>{name}</p>
                 </div>
                 <div className='flex space-x-3'>
                     <span className=''><FaPhoneAlt></FaPhoneAlt></span>

@@ -7,6 +7,8 @@ import img2 from '../../../Components/assets/msc.jpg';
 
 const LeftSide = () => {
     const [user, setUser] = useState('');
+    const [chatFriend, setChatFriend] = useState('');
+    console.log(chatFriend);
 
     useEffect(() => {
         fetch('http://localhost:5000/users')
@@ -37,37 +39,37 @@ const LeftSide = () => {
             <div className='space-x-2'>
                 <div className="avatar online">
                     <div className="w-8 rounded-full">
-                        <img src={img1} alt='' />
+                        <img src={img2} alt='' />
                     </div>
                 </div>
                 <div className="avatar online">
                     <div className="w-8 rounded-full">
-                        <img src={img1} alt='' />
+                        <img src={img2} alt='' />
                     </div>
                 </div>
                 <div className="avatar online">
                     <div className="w-8 rounded-full">
-                        <img src={img1} alt='' />
+                        <img src={img2} alt='' />
                     </div>
                 </div>
                 <div className="avatar online">
                     <div className="w-8 rounded-full">
-                        <img src={img1} alt='' />
+                        <img src={img2} alt='' />
                     </div>
                 </div>
                 <div className="avatar online">
                     <div className="w-8 rounded-full">
-                        <img src={img1} alt='' />
+                        <img src={img2} alt='' />
                     </div>
                 </div>
             </div>
             <div className='grid gap-3'>
                 {user && user.length > 0 ?
-                    user.map(us => <div key={us._id} className="avatar space-x-4 hover:bg-slate-500">
+                    user.map(us => <div key={us._id} chatfriend={chatFriend} className="avatar space-x-4 hover:bg-slate-500">
                         <div className="w-8 rounded-full">
                             <img src={img2} alt='' />
                         </div>
-                        <p className='text-red'>{us.name}</p>
+                        <p onClick={() => setChatFriend(us)}>{us.name}</p>
                     </div>) : 'no friend active'
                 }
             </div>
