@@ -27,12 +27,11 @@ const Login = () => {
     return (
         <section style={{ background: '#dbeafe' }}>
             <div className='flex justify-center items-center'>
-                <span ><BsFillChatTextFill className='h-8 w-10 shadow-current' style={{ color: '#2563eb' }}></BsFillChatTextFill></span>
-                <p className='text-2xl font-bold'>ConnectMe</p>
+                <span className=' '><BsFillChatTextFill className='h-8 w-10 mt-28' style={{ color: '#2563eb' }}></BsFillChatTextFill></span>
+                <p className='text-2xl font-bold mt-28 ml-2'>ConnectMe</p>
             </div>
             <div className='flex justify-center items-center'>
-
-                <div className='my-28 p-7 shadow-2xl bg-base-100'>
+                <div className='mt-8 mb-16 p-7 rounded-md shadow-2xl bg-base-100'>
                     <form onSubmit={handleSubmit(handleLogin)}>
                         <div>
                             <label className="label"><span className="label-text font-bold" style={{ color: "#675444" }}>Name</span></label>
