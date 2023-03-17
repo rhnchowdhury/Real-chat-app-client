@@ -35,7 +35,7 @@ const NavBar = () => {
 
 
     return (
-        <div>
+        <div style={{ background: '#dbeafe' }}>
             <div className="navbar bg-base-100">
                 <div className="navbar-start">
                     <div className="dropdown">
