@@ -22,7 +22,7 @@ const Login = () => {
                 setLoginError(err.message);
             });
 
-    }
+    };
 
     return (
         <section style={{ background: '#dbeafe' }}>
@@ -31,7 +31,7 @@ const Login = () => {
                 <p className='text-2xl font-bold mt-28 ml-2'>ConnectMe</p>
             </div>
             <div className='flex justify-center items-center'>
-                <div className='mt-8 mb-16 p-7 rounded-md shadow-2xl bg-base-100'>
+                <div className='mt-8 mb-16 p-7 rounded-3xl shadow-2xl'>
                     <form onSubmit={handleSubmit(handleLogin)}>
                         <div>
                             <label className="label"><span className="label-text font-bold">Name</span></label>

@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
+import { BsFillChatTextFill } from "react-icons/bs";
 import useToken from '../../../../hooks/useToken';
 import { AuthContext } from '../../../Context/AuthProvider';
 
@@ -81,12 +82,15 @@ const SignUp = () => {
 
     return (
         <section style={{ background: '#dbeafe' }}>
-
+            <div className='flex justify-center items-center'>
+                <span className=' '><BsFillChatTextFill className='h-8 w-10 mt-16' style={{ color: '#2563eb' }}></BsFillChatTextFill></span>
+                <p className='text-2xl font-bold mt-16 ml-2'>ConnectMe</p>
+            </div>
             <div className='card-actions justify-center'>
-                <div className='my-5'>
+                <div className='mt-8 mb-12 p-7 rounded-3xl shadow-2xl '>
                     <form onSubmit={handleSubmit(handleSignIn)}>
                         <div>
-                            <label className="label"><span className="label-text font-bold" style={{ color: "#675444" }}>Name</span></label>
+                            <label className="label"><span className="label-text font-bold">Name</span></label>
                             <input type='text' {...register("name", {
                                 required: "Name is required"
                             })}
@@ -94,12 +98,12 @@ const SignUp = () => {
                             {errors.name && <p className='text-error'>{errors.name?.message}</p>}
                         </div>
                         <div>
-                            <label className="label"><span className="label-text font-bold" style={{ color: "#675444" }}>Select Image</span></label>
+                            <label className="label"><span className="label-text font-bold">Select Image</span></label>
                             <input type='file' placeholder='' {...register("image")}
                                 className="input input-bordered w-full max-w-xs" />
                         </div>
                         <div>
-                            <label className="label"><span className="label-text font-bold" style={{ color: "#675444" }}>Email</span></label>
+                            <label className="label"><span className="label-text font-bold">Email</span></label>
                             <input type='text' {...register("email", {
                                 required: "Email is required",
                             })}
@@ -107,7 +111,7 @@ const SignUp = () => {
                             {errors.email && <p className='text-error'>{errors.email?.message}</p>}
                         </div>
                         <div>
-                            <label className="label"><span className="label-text font-bold" style={{ color: "#675444" }}>Password</span></label>
+                            <label className="label"><span className="label-text font-bold">Password</span></label>
                             <input type='password' {...register("password", {
                                 required: "Password is required",
                                 minLength: { value: 6, message: "Password will be at least 6 characters" },
@@ -116,17 +120,12 @@ const SignUp = () => {
                                 className="input input-bordered w-full max-w-xs" />
                             {errors.password && <p className='text-error'>{errors.password?.message}</p>}
                         </div>
-                        <input className='btn  mt-4 w-full max-w-xs' style={{ background: "#675444" }} value='Sign Up' type="submit" />
+                        <input className='btn  mt-4 w-full max-w-xs' style={{ background: '#2563eb', border: '0px solid' }} value='Sign Up' type="submit" />
                         {signError && <p className='text-error'>{signError}</p>}
-                        <p className='' style={{ color: "#675444" }}>Already have an account? <Link to='/login' className='text-yellow-500 font-bold'>Please Login</Link></p>
+                        <p>Already have an account? <Link to='/login' className='font-bold' style={{ color: "#2563eb" }}>Please Login</Link></p>
                     </form>
                 </div>
             </div>
-            {/* <div className="divider">OR</div>
-            <div className='card-actions justify-center'>
-                <button onClick={handleGoogleSignIn} className='btn btn-outline w-full max-w-xs text-error'>CONTINUE WITH GOOGLE</button>
-            </div> */}
-
         </section>
     );
 };
