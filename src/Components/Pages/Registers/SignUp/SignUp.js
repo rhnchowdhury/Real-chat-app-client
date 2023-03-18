@@ -80,9 +80,10 @@ const SignUp = () => {
     }
 
     return (
-        <div>
-            <div className='card-actions justify-center my-5'>
-                <div>
+        <section style={{ background: '#dbeafe' }}>
+
+            <div className='card-actions justify-center'>
+                <div className='my-5'>
                     <form onSubmit={handleSubmit(handleSignIn)}>
                         <div>
                             <label className="label"><span className="label-text font-bold" style={{ color: "#675444" }}>Name</span></label>
@@ -125,7 +126,8 @@ const SignUp = () => {
             <div className='card-actions justify-center'>
                 <button onClick={handleGoogleSignIn} className='btn btn-outline w-full max-w-xs text-error'>CONTINUE WITH GOOGLE</button>
             </div> */}
-        </div>
+
+        </section>
     );
 };
 

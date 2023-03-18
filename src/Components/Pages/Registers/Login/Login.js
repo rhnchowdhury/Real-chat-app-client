@@ -34,7 +34,7 @@ const Login = () => {
                 <div className='mt-8 mb-16 p-7 rounded-md shadow-2xl bg-base-100'>
                     <form onSubmit={handleSubmit(handleLogin)}>
                         <div>
-                            <label className="label"><span className="label-text font-bold" style={{ color: "#675444" }}>Name</span></label>
+                            <label className="label"><span className="label-text font-bold">Name</span></label>
                             <input type='text' {...register("name",
                                 {
                                     required: "Name is required"
@@ -43,7 +43,7 @@ const Login = () => {
                             {errors.name && <p className='text-error'>{errors.name?.message}</p>}
                         </div>
                         <div>
-                            <label className="label"><span className="label-text font-bold" style={{ color: "#675444" }}>Email</span></label>
+                            <label className="label"><span className="label-text font-bold">Email</span></label>
                             <input type='text' {...register("email",
                                 {
                                     required: "Email address is required"
@@ -52,7 +52,7 @@ const Login = () => {
                             {errors.email && <p className='text-error'>{errors.email?.message}</p>}
                         </div>
                         <div>
-                            <label className="label"><span className="label-text font-bold" style={{ color: "#675444" }}>Password</span></label>
+                            <label className="label"><span className="label-text font-bold">Password</span></label>
                             <input type='password' {...register("password",
                                 {
                                     required: "Password is required",
@@ -61,11 +61,11 @@ const Login = () => {
                                 })}
                                 className="input input-bordered w-full max-w-xs" />
                             {errors.password && <p className='text-error'>{errors.password?.message}</p>}
-                            <label className="label"><span className="label-text" style={{ color: "#675444" }}>Forget password?</span></label>
+                            <label className="label"><span className="label-text" style={{ color: "#2563eb" }}>Forget password?</span></label>
                         </div>
-                        <input className='btn w-full max-w-xs' style={{ background: "#675444" }} value='Login' type="submit" />
+                        <input className='btn w-full max-w-xs' style={{ background: '#2563eb', border: '0px solid' }} value='Login' type="submit" />
                         {loginError && <p className='text-error'>{loginError}</p>}
-                        <p style={{ color: "#675444" }}>New to Artificial Pets? <Link to='/signup' className='text-error font-bold'>Create an account</Link></p>
+                        <p>Don't have an account? <Link to='/signup' className='text-error font-bold' style={{ color: '#2563eb' }}>Create an account</Link></p>
                     </form>
                 </div>
             </div>
