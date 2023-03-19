@@ -36,7 +36,7 @@ const MessageSend = () => {
                 </div>
                 <div className='emoji-sec'>
                     {
-                        emojis.map(e => <span>{e}</span>)
+                        emojis.map(e => <span key={e.id}>{e}</span>)
                     }
                 </div>
             </div>

@@ -3,7 +3,8 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import img1 from '../../../assets/msc.jpg';
 import './InfoSec.css';
 
-const InfoSec = () => {
+const InfoSec = ({ chatFriend }) => {
+    const { name } = chatFriend;
     return (
         <section className='mx-2'>
             <input type="checkbox" id='gallery' />
@@ -14,7 +15,7 @@ const InfoSec = () => {
                     </div>
                 </div>
                 <p className='text-center' style={{ color: 'rgb(27,238,27)' }}>Active</p>
-                <h6 className='text-center'>Rhihan</h6>
+                <h6 className='text-center'>{name}</h6>
             </div>
             <div className='space-y-3'>
                 <div className='flex justify-between'>

@@ -3,14 +3,15 @@ import InfoSec from './InfoSec/InfoSec';
 import MessageSec from './MessageSec/MessageSec';
 import './MessageSec/MessageSend.css';
 
-const RightSide = () => {
+const RightSide = ({ chatFriend }) => {
+    // console.log(chatFriend)
     return (
         <div className='flex m-2'>
             <div className='w-full'>
-                <MessageSec></MessageSec>
+                <MessageSec chatFriend={chatFriend}></MessageSec>
             </div>
             <div className='w-96 dot'>
-                <InfoSec></InfoSec>
+                <InfoSec chatFriend={chatFriend}></InfoSec>
             </div>
         </div>
     );
