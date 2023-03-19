@@ -6,7 +6,7 @@ import img1 from '../../../assets/msc.jpg'
 import MessageSend from './MessageSend';
 import '../MessageSec/MessageSend.css'
 
-const MessageSec = ({ chatFriend }) => {
+const MessageSec = ({ chatFriend, inputHandle, message, sendMessage }) => {
     const { name } = chatFriend;
     // console.log(chatFriend);
 
@@ -55,7 +55,7 @@ const MessageSec = ({ chatFriend }) => {
                     <p className='text-red'>I'm fine</p>
                 </div>
             </div>
-            <MessageSend chatFriend={chatFriend}></MessageSend>
+            <MessageSend chatFriend={chatFriend} inputHandle={inputHandle} message={message} sendMessage={sendMessage}></MessageSend>
         </section>
     );
 };

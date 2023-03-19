@@ -5,7 +5,7 @@ import { TfiGallery } from "react-icons/tfi";
 import { BiCommentEdit } from "react-icons/bi";
 import './MessageSend.css';
 
-const MessageSend = () => {
+const MessageSend = ({ inputHandle, message, sendMessage }) => {
     const emojis = [
         '😀', '😂', '😅', '😎', '😊', '😍', '😐', '😮', '🤨',
         '🙂', '🙄', '😛', '😜', '🤑', '😭', '😩', '😡', '😱', '🤧'
@@ -28,10 +28,10 @@ const MessageSend = () => {
                     <AiOutlineGift></AiOutlineGift>
                 </div>
                 <div className='flex'>
-                    <input type="text" placeholder='Aa' className='form-control rounded-lg border-2' />
+                    <input onChange={inputHandle} value={message} type="text" placeholder='Aa' className='form-control rounded-lg border-2' />
                     <label htmlFor="emoji" className='cursor-pointer'>🙂</label>
                 </div>
-                <div>
+                <div onClick={sendMessage} className='cursor-pointer'>
                     ❤
                 </div>
                 <div className='emoji-sec'>

@@ -58,8 +58,6 @@ const LeftSide = ({ user, setChatFriend }) => {
                         <div className="w-8 rounded-full">
                             <img src={img2} alt='' />
                         </div>
-                        {/* <p >{us.name}</p>
-                    </div>) : 'no friend active' */}
                         <p onClick={() => setChatFriend(us)}>{us.name}</p>
                     </div>) : 'no friend active'
                 }
