@@ -13,7 +13,14 @@ const Messenger = () => {
 
     const sendMessage = e => {
         e.preventDefault();
-        console.log(message)
+        // console.log(message)
+        const data = {
+            senderName: user?.name,
+            receiverId: chatFriend._id,
+            sendMessage: message ? message : '❤'
+
+        }
+        console.log(data)
     }
 
     useEffect(() => {
